@@ -8,7 +8,7 @@ const Card = ({ key, data }: Props) => {
   const { common, png } = data;
 
   return (
-    <div key={key} className={Styles.card}>
+    <div key={key} className={`${Styles.card} countryCard`}>
       <img className={Styles.img} src={png} alt={`${common} flag`} />
       <p className={Styles.title}>{common}</p>
     </div>
