@@ -7,7 +7,6 @@ type LayoutProps = {
 };
 
 const Layout = ({ children, grid = false, search, onChange }: LayoutProps) => {
-  console.log(onChange, "onChange");
   return (
     <div>
       <div className="parent_section">
