@@ -9,7 +9,9 @@ const useCountry = () => {
     const fetchCountries = async () => {
       try {
         setLoading(true);
-        const res = await fetch("https://xcountries-backend.labs.crio.do/all");
+        const res = await fetch(
+          "https://countries-search-data-prod-812920491762.asia-south1.run.app/countries",
+        );
         if (!res.ok) throw new Error("Failed to fetch countries");
 
         const data = await res.json();

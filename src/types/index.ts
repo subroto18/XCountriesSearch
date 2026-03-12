@@ -1,5 +1,4 @@
 export type CountryDataType = {
-  name: string;
-  flag: string;
-  abbr: string;
+  common: string;
+  png: string;
 };

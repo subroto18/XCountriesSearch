@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./App.css";
 import Layout from "./components/common/Layout";
 import useCountry from "./hooks/useCountry";
@@ -8,6 +9,16 @@ import Placeholder from "./ui/Card/Placeholder";
 
 function App() {
   const { countries, loading, error } = useCountry();
+  const [search, setSearch] = useState("");
+
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearch(e.target.value);
+  };
+
+  const filteredCountries = countries.filter((country: CountryDataType) =>
+    country.common.toLowerCase().includes(search.toLowerCase()),
+  );
+
   if (loading)
     return (
       <Layout grid>
@@ -23,9 +34,9 @@ function App() {
     );
 
   return (
-    <Layout grid>
-      {countries.map((country: CountryDataType) => (
-        <Card key={country.abbr} data={country} />
+    <Layout search={search} onChange={onChange} grid>
+      {filteredCountries.map((country: CountryDataType) => (
+        <Card key={country.common} data={country} />
       ))}
     </Layout>
   );

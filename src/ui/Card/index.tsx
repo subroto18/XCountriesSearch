@@ -5,12 +5,12 @@ type Props = {
   data: CountryDataType;
 };
 const Card = ({ key, data }: Props) => {
-  const { flag, name } = data;
+  const { common, png } = data;
 
   return (
     <div key={key} className={Styles.card}>
-      <img className={Styles.img} src={flag} alt={`${name} flag`} />
-      <p className={Styles.title}>{name}</p>
+      <img className={Styles.img} src={png} alt={`${common} flag`} />
+      <p className={Styles.title}>{common}</p>
     </div>
   );
 };

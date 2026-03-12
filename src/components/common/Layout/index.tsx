@@ -1,13 +1,20 @@
+import Search from "../Search";
 type LayoutProps = {
-  children: React.ReactNode;
+  search?: string;
+  onChange?: React.ChangeEventHandler<HTMLInputElement>;
   grid?: boolean;
+  children: React.ReactNode;
 };
 
-const Layout = ({ children, grid = false }: LayoutProps) => {
+const Layout = ({ children, grid = false, search, onChange }: LayoutProps) => {
+  console.log(onChange, "onChange");
   return (
-    <div className="parent_section">
-      <div className="parent">
-        {grid ? <div className="grid">{children}</div> : children}
+    <div>
+      <div className="parent_section">
+        <div className="parent">
+          <Search search={search || ""} onChange={onChange} />
+          {grid ? <div className="grid">{children}</div> : children}
+        </div>
       </div>
     </div>
   );

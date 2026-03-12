@@ -1,152 +1,97 @@
-# 🌍 Country Explorer
+🌍 Country Search App
 
-A simple **React + TypeScript** application that fetches country data from an API and displays it in a responsive card layout. The project demonstrates modern React practices such as **custom hooks, loading skeletons, error handling, and reusable components**.
+A simple React + TypeScript project that displays a list of countries with their flags and allows users to search for countries in real-time.
 
----
+📝 Features
 
-## 🚀 Features
+Fetches a list of countries from an API.
 
-- Fetches country data from an external API
-- Displays countries in a **responsive grid layout**
-- **Custom React Hook** for API fetching
-- **Loading placeholder (skeleton cards)** while data loads
-- **Error state handling**
-- Built with **React + TypeScript**
-- Clean and scalable folder structure
+Displays country name and flag in a card view.
 
----
+Search functionality to filter countries by name.
 
-## 🛠 Tech Stack
+Loading and error handling for API requests.
 
-- **React**
-- **TypeScript**
-- **CSS Grid for responsive layout**
-- **Custom Hooks**
-- **Fetch API**
+Built with React, TypeScript, and CSS modules.
 
----
+⚡ Tech Stack
 
-## 📡 API Used
+React – Frontend library for building the UI
 
-Country data is fetched from:
+TypeScript – Static typing for better development experience
 
-```
-https://xcountries-backend.labs.crio.do/all
-```
+CSS Modules – Scoped styling
 
-Each country object contains:
+Hooks – useState, useEffect, and custom hooks for fetching data
 
-- `name`
-- `flag`
-- `abbr`
+API – REST Countries API
 
----
+🖥️ Screenshots
 
-## 📂 Project Structure
+🚀 Installation
 
-```
-src
- ├── hooks
- │    └── useCountry.ts
- │
- ├── types
- │    └── index.ts
- │
- ├── ui
- │    └── Card
- │        ├── Card.tsx
- │        ├── Error.tsx
- │        └── Placeholder.tsx
- │
- ├── App.tsx
- └── App.css
-```
+Clone the repository:
 
----
+git clone https://github.com/yourusername/country-search-app.git
 
-## ⚙️ Installation & Setup
+Install dependencies:
 
-1️⃣ Clone the repository
-
-```bash
-git clone <your-repo-url>
-```
-
-2️⃣ Navigate into the project
-
-```bash
-cd country-explorer
-```
-
-3️⃣ Install dependencies
-
-```bash
+cd country-search-app
 npm install
-```
 
-4️⃣ Start the development server
+Start the development server:
 
-```bash
 npm run dev
-```
 
-The application will run on:
+Open your browser at http://localhost:5173
 
-```
-http://localhost:5173
-```
+📂 Project Structure
+src/
+├─ components/
+│ └─ common/
+│ └─ Layout.tsx
+├─ hooks/
+│ └─ useCountry.ts
+├─ types/
+│ └─ index.ts
+├─ ui/
+│ └─ Card/
+│ ├─ Card.tsx
+│ ├─ Error.tsx
+│ └─ Placeholder.tsx
+├─ App.tsx
+└─ main.tsx
 
----
+Layout.tsx – Main layout component with search input
 
-## 📦 How It Works
+useCountry.ts – Custom hook to fetch country data
 
-1. The **custom hook (`useCountry`)** fetches country data from the API.
-2. While the API request is in progress, **placeholder skeleton cards** are displayed.
-3. If the API fails, an **error component** is shown.
-4. Once data is successfully fetched, the **country cards are rendered in a grid layout**.
+Card.tsx – Displays a country with its flag
 
----
+Error.tsx – Error message display
 
-## 🧠 Concepts Demonstrated
+Placeholder.tsx – Loading skeleton while fetching data
 
-- React **Custom Hooks**
-- **API fetching** using Fetch
-- **Loading and Error UI states**
-- **TypeScript typing**
-- **Reusable UI components**
-- **Responsive card layout**
+🔧 How It Works
 
----
+The app fetches all countries from the API when it loads.
 
-## 📸 UI States
+Users can type in the search input in the layout.
 
-| State   | Description             |
-| ------- | ----------------------- |
-| Loading | Displays skeleton cards |
-| Error   | Shows error message     |
-| Success | Renders country cards   |
+The app filters the countries in real-time based on the search query.
 
----
+Cards display the country name and flag.
 
-## 🌟 Future Improvements
+If the API fails, an error message is displayed.
 
-- Add **search functionality**
-- Add **country filtering**
-- Add **debounced search**
-- Add **pagination**
-- Improve **UI/UX design**
+While fetching, a placeholder/loading component is shown.
 
----
+🎯 Future Improvements
 
-## 👨‍💻 Author
+Add pagination for better performance with large lists
 
-**Subroto Chakraborty**
+Add country details page
 
-Frontend Developer passionate about building clean and scalable web applications using **React, TypeScript, and modern frontend tools**.
+Improve UI with Tailwind CSS or Material UI
 
----
-
-## 📄 License
-
-This project is open-source and available under the **MIT License**.
-# XCountriesSearch
+Implement debounced search for better performance
