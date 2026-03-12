@@ -35,8 +35,8 @@ function App() {
 
   return (
     <Layout search={search} onChange={onChange} grid>
-      {filteredCountries.map((country: CountryDataType) => (
-        <Card key={country.common} data={country} />
+      {filteredCountries.map((country: CountryDataType, index: number) => (
+        <Card key={country.common || index} data={country} />
       ))}
     </Layout>
   );
